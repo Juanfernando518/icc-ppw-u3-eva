@@ -26,10 +26,10 @@ public class EmployeeController {
         return ResponseEntity.ok(employeeService.getCompanyDepartments(id));
     }
 
-    @GetMapping("/companies/{id}/high-salary")
+    @GetMapping("/companies/{id}/high-salary-employees")
     public ResponseEntity<EmployeesResponseDto> getHighSalary(
             @PathVariable Long id,
-            @RequestParam Double minSalary) {
+            @RequestParam(defaultValue = "5000") Double minSalary) {
         return ResponseEntity.ok(employeeService.getHighSalaryEmployees(id, minSalary));
     }
 }
