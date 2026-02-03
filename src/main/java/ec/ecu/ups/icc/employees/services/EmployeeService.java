@@ -20,7 +20,6 @@ public class EmployeeService {
     private EmployeeRepository employeeRepository;
 
     public DepartmentWithEmployeesDto getDepartmentEmployees(Long deptId, String sort) {
-        // CORREGIDO: "S" como String
         Department dept = departmentRepository.findByIdAndActive(deptId, "S")
                 .orElseThrow(() -> new RuntimeException("Department not found"));
 
